@@ -7,7 +7,7 @@ function to_int() {
 }
 
 # Usar siempre el tag fijo
-LATEST_VER="0_Disaster-2"
+LATEST_VER="0_Disaster-2.0"
 LATEST_VER_INT=$(to_int "$LATEST_VER")
 echo "Usando tag fijo: $LATEST_VER (${LATEST_VER_INT})"
 
