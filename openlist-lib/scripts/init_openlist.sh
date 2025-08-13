@@ -6,7 +6,7 @@ TAG_NAME=$(git -c 'versionsort.suffix=-' ls-remote --exit-code --refs --sort='ve
 echo "OpenList - ${TAG_NAME}"
 rm -rf ./src
 unset GIT_WORK_TREE
-git clone --branch "0_Disaster-2" https://github.com/Clouddark75/OpenList.git ./src
+git clone --branch "0_Disaster-3" https://github.com/Clouddark75/OpenList.git ./src
 rm -rf ./src/.git
 
 echo "Checking cloned source structure:"
