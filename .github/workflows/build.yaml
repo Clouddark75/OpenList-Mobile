@@ -108,3 +108,4 @@ jobs:
         with:
           name: "OpenList-Mobile-v${{ env.ver_name }}_x86_64"
           path: "${{ env.output }}/*64.apk"
+          
