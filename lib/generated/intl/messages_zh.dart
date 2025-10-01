@@ -115,6 +115,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "autoCheckForUpdatesDesc": MessageLookupByLibrary.simpleMessage(
       "启动时自动检查更新",
     ),
+    "autoStartIssue": MessageLookupByLibrary.simpleMessage("自启动相关说明"),
+    "autoStartIssueDesc": MessageLookupByLibrary.simpleMessage(
+      "设置自启动时建议把app的电池优化一并关闭，当前在开启自启动后，系统重启时服务会自动在后台启动，但可能不会在通知栏弹出通知。请放心，服务已正常运行，您可以在通知栏快捷开关查看服务状态，或回到主界面查看服务开关确认服务是否已启动。",
+    ),
     "autoStartWebPage": MessageLookupByLibrary.simpleMessage("将网页设置为打开首页"),
     "autoStartWebPageDesc": MessageLookupByLibrary.simpleMessage("打开主界面时的首页"),
     "batchDownloadComplete": MessageLookupByLibrary.simpleMessage("批量下载完成"),
@@ -187,6 +191,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "currentIsLatestVersion": MessageLookupByLibrary.simpleMessage("已经是最新版本"),
     "currentlyDownloading": MessageLookupByLibrary.simpleMessage("正在下载"),
     "dataDirectory": MessageLookupByLibrary.simpleMessage("data 文件夹路径"),
+    "databaseNotSavedIssue": MessageLookupByLibrary.simpleMessage("数据库未保存问题"),
+    "databaseNotSavedIssueDesc": MessageLookupByLibrary.simpleMessage(
+      "如不手动关闭OpenList，则数据库可能不会被保存到对应的db文件中，如遇到此问题，请手动关闭以解决此问题。（开关位于主程序菜单OpenList界面，以及通知栏的通知上）",
+    ),
     "delete": MessageLookupByLibrary.simpleMessage("删除"),
     "deleteFailed": MessageLookupByLibrary.simpleMessage("删除失败"),
     "deleteFile": MessageLookupByLibrary.simpleMessage("删除文件"),
@@ -369,6 +377,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "测试下载大文件(1MB)",
     ),
     "testDownloadPngImage": MessageLookupByLibrary.simpleMessage("测试下载PNG图片"),
+    "troubleshooting": MessageLookupByLibrary.simpleMessage("疑难解答"),
+    "troubleshootingDesc": MessageLookupByLibrary.simpleMessage("常见问题与解决方案"),
     "tryToOpenFile": m41,
     "uiSettings": MessageLookupByLibrary.simpleMessage("界面"),
     "userCancelledDownload": MessageLookupByLibrary.simpleMessage("用户取消下载"),

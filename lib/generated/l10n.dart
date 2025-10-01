@@ -1404,6 +1404,56 @@ class S {
     return Intl.message('English', name: 'english', desc: '', args: []);
   }
 
+  /// `疑难解答`
+  String get troubleshooting {
+    return Intl.message('疑难解答', name: 'troubleshooting', desc: '', args: []);
+  }
+
+  /// `常见问题与解决方案`
+  String get troubleshootingDesc {
+    return Intl.message(
+      '常见问题与解决方案',
+      name: 'troubleshootingDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `数据库未保存问题`
+  String get databaseNotSavedIssue {
+    return Intl.message(
+      '数据库未保存问题',
+      name: 'databaseNotSavedIssue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `如不手动关闭OpenList，则数据库可能不会被保存到对应的db文件中，如遇到此问题，请手动关闭以解决此问题。（开关位于主程序菜单OpenList界面，以及通知栏的通知上）`
+  String get databaseNotSavedIssueDesc {
+    return Intl.message(
+      '如不手动关闭OpenList，则数据库可能不会被保存到对应的db文件中，如遇到此问题，请手动关闭以解决此问题。（开关位于主程序菜单OpenList界面，以及通知栏的通知上）',
+      name: 'databaseNotSavedIssueDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `自启动相关说明`
+  String get autoStartIssue {
+    return Intl.message('自启动相关说明', name: 'autoStartIssue', desc: '', args: []);
+  }
+
+  /// `设置自启动时建议把app的电池优化一并关闭，当前在开启自启动后，系统重启时服务会自动在后台启动，但可能不会在通知栏弹出通知。请放心，服务已正常运行，您可以在通知栏快捷开关查看服务状态，或回到主界面查看服务开关确认服务是否已启动。`
+  String get autoStartIssueDesc {
+    return Intl.message(
+      '设置自启动时建议把app的电池优化一并关闭，当前在开启自启动后，系统重启时服务会自动在后台启动，但可能不会在通知栏弹出通知。请放心，服务已正常运行，您可以在通知栏快捷开关查看服务状态，或回到主界面查看服务开关确认服务是否已启动。',
+      name: 'autoStartIssueDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `正在下载`
   String get currentlyDownloading {
     return Intl.message(

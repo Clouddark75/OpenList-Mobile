@@ -125,6 +125,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "autoCheckForUpdatesDesc": MessageLookupByLibrary.simpleMessage(
       "Check for updates when app starts",
     ),
+    "autoStartIssue": MessageLookupByLibrary.simpleMessage(
+      "Auto-Start Information",
+    ),
+    "autoStartIssueDesc": MessageLookupByLibrary.simpleMessage(
+      "When enabling auto-start, it\'s recommended to disable battery optimization for the app. Currently, after enabling auto-start, the service will automatically start in the background after system reboot, but may not show a notification in the notification bar. Rest assured, the service is running normally. You can check the service status through the quick settings tile in the notification shade, or return to the main interface to check the service toggle to confirm if the service has started.",
+    ),
     "autoStartWebPage": MessageLookupByLibrary.simpleMessage(
       "Set web page as startup page",
     ),
@@ -217,6 +223,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "currentlyDownloading": MessageLookupByLibrary.simpleMessage("Downloading"),
     "dataDirectory": MessageLookupByLibrary.simpleMessage("data Directory"),
+    "databaseNotSavedIssue": MessageLookupByLibrary.simpleMessage(
+      "Database Not Saved Issue",
+    ),
+    "databaseNotSavedIssueDesc": MessageLookupByLibrary.simpleMessage(
+      "If you don\'t manually close OpenList, the database may not be saved to the corresponding db file. If you encounter this issue, please manually close the app to resolve it. (The switch is located in the main program menu on the OpenList interface, as well as in the notification bar)",
+    ),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "deleteFailed": MessageLookupByLibrary.simpleMessage("Delete failed"),
     "deleteFile": MessageLookupByLibrary.simpleMessage("Delete file"),
@@ -486,6 +498,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "testDownloadPngImage": MessageLookupByLibrary.simpleMessage(
       "Test download PNG image",
+    ),
+    "troubleshooting": MessageLookupByLibrary.simpleMessage("Troubleshooting"),
+    "troubleshootingDesc": MessageLookupByLibrary.simpleMessage(
+      "Common issues and solutions",
     ),
     "tryToOpenFile": m41,
     "uiSettings": MessageLookupByLibrary.simpleMessage("UI"),
