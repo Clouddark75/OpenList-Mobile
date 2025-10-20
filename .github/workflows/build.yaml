@@ -93,7 +93,7 @@ jobs:
           path: ${{ github.workspace }}/android/app/libs/
           check_artifacts: true
           search_artifacts: true
-
+          allow_forks: true
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
