@@ -157,7 +157,7 @@ jobs:
           # Remove Haskell runtime to save space
           haskell: true  
           # Remove large packages like Chrome, Firefox, etc.
-          large-packages: true
+          large-packages: false
           # Remove Docker images to save space
           docker-images: true
           # Remove swap storage to save space
