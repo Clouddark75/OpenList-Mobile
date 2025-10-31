@@ -8,8 +8,8 @@ mkdir -p dist
 fetch_release_info() {
     local attempt=1
     local max_attempts=3
-    local api_url="https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest"
-    local proxy_url="https://ghproxy.lvedong.eu.org/https://api.github.com/repos/OpenListTeam/OpenList-Frontend/releases/latest"
+    local api_url="https://api.github.com/repos/Clouddark75/OpenList-Frontend/releases/latest"
+    local proxy_url="https://ghproxy.lvedong.eu.org/https://api.github.com/repos/Clouddark75/OpenList-Frontend/releases/latest"
     
     # First try direct API
     echo "Trying direct GitHub API..."
