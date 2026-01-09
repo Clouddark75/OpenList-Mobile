@@ -25,9 +25,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
 import splitties.systemservices.powerManager
 
 /**
@@ -62,10 +61,6 @@ class OpenListService : Service(), OpenList.Listener {
     private val mReceiver = MyReceiver()
     private var mWakeLock: PowerManager.WakeLock? = null
     private var mLocalAddress: String = ""
-    private var mDbSyncJob: Job? = null
-
-    // Database sync interval in milliseconds (5 minutes)
-    private val DB_SYNC_INTERVAL = 36 * 60 * 1000L
 
     override fun onBind(p0: Intent?): IBinder? = null
 
@@ -170,64 +165,22 @@ class OpenListService : Service(), OpenList.Listener {
         // 移除OpenList监听器
         OpenList.removeListener(this)
         
-        // Stop database sync task
-        stopDatabaseSyncTask()
+        // Force final database sync before complete shutdown
+        Log.d(TAG, "Performing final database sync before service destruction")
+        try {
+            if (OpenList.isRunning()) {
+                OpenList.forceDatabaseSync()
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to perform final database sync", e)
+        }
     }
 
     override fun onShutdown(type: String) {
         Log.d(TAG, "OpenList shutdown: $type")
         if (!OpenList.isRunning()) {
             isRunning = false
-            // Stop database sync task when service shuts down
-            stopDatabaseSyncTask()
             notifyStatusChanged()
-        }
-    }
-
-    /**
-     * Start periodic database synchronization task
-     */
-    private fun startDatabaseSyncTask() {
-        stopDatabaseSyncTask() // Stop any existing task first
-        
-        mDbSyncJob = mScope.launch(Dispatchers.IO) {
-            while (isActive && isRunning) {
-                try {
-                    delay(DB_SYNC_INTERVAL)
-                    if (isRunning && OpenList.isRunning()) {
-                        Log.d(TAG, "Performing periodic database sync")
-                        OpenList.forceDatabaseSync()
-                    }
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error during periodic database sync", e)
-                }
-            }
-        }
-        Log.d(TAG, "Database sync task started")
-    }
-
-    /**
-     * Stop database synchronization task
-     */
-    private fun stopDatabaseSyncTask() {
-        mDbSyncJob?.cancel()
-        mDbSyncJob = null
-        Log.d(TAG, "Database sync task stopped")
-    }
-
-    /**
-     * Force immediate database synchronization
-     */
-    fun forceImmediateDbSync() {
-        mScope.launch(Dispatchers.IO) {
-            try {
-                if (isRunning && OpenList.isRunning()) {
-                    Log.d(TAG, "Performing immediate database sync")
-                    OpenList.forceDatabaseSync()
-                }
-            } catch (e: Exception) {
-                Log.e(TAG, "Error during immediate database sync", e)
-            }
         }
     }
 
@@ -251,11 +204,8 @@ class OpenListService : Service(), OpenList.Listener {
             Log.d(TAG, "Shutting down OpenList")
             mScope.launch(Dispatchers.IO) {
                 try {
-                    if (OpenList.isRunning()) {
-                        Log.d(TAG, "Forcing database sync before shutdown")
-                        OpenList.forceDatabaseSync()
-                    }
-                    
+                    // OpenList.shutdown() ya maneja el sync internamente
+                    // No necesitamos hacerlo manualmente aquí
                     OpenList.shutdown()
                     isRunning = false
                     launch(Dispatchers.Main) {
@@ -309,6 +259,14 @@ class OpenListService : Service(), OpenList.Listener {
         
         mScope.launch(Dispatchers.IO) {
             try {
+                // Force database sync before starting (to ensure clean state)
+                Log.d(TAG, "Performing database sync before startup")
+                try {
+                    OpenList.forceDatabaseSync()
+                } catch (e: Exception) {
+                    Log.w(TAG, "Failed to sync database before startup (may not exist yet)", e)
+                }
+                
                 // Initialize OpenList
                 OpenList.init()
                 delay(100)
@@ -322,7 +280,6 @@ class OpenListService : Service(), OpenList.Listener {
                 // Update UI on success
                 launch(Dispatchers.Main) {
                     notifyStatusChanged()
-                    startDatabaseSyncTask()
                 }
                 
                 Log.d(TAG, "OpenList started successfully")
