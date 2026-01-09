@@ -74,56 +74,27 @@ class MainActivity : FlutterActivity() {
         })
     }
 
-    override fun onPause() {
-        super.onPause()
-        // Trigger database sync when app goes to background
-        triggerDatabaseSync("onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        // Trigger database sync when app is stopped
-        triggerDatabaseSync("onStop")
-    }
-
-    override fun onTrimMemory(level: Int) {
-        super.onTrimMemory(level)
-        // Trigger database sync on memory pressure
-        when (level) {
-            TRIM_MEMORY_UI_HIDDEN,
-            TRIM_MEMORY_BACKGROUND,
-            TRIM_MEMORY_MODERATE,
-            TRIM_MEMORY_COMPLETE -> {
-                triggerDatabaseSync("onTrimMemory:$level")
-            }
-        }
-    }
+    // REMOVIDO: onPause ya no hace sync
+    // El sync constante en onPause causaba syncs excesivos cada vez que
+    // cambias de app o bloqueas la pantalla
+    
+    // REMOVIDO: onStop ya no hace sync
+    // El sync constante en onStop causaba syncs excesivos
+    
+    // REMOVIDO: onTrimMemory ya no hace sync
+    // El sync por presión de memoria causaba syncs excesivos
 
     override fun onDestroy() {
         super.onDestroy()
-        // Trigger database sync before activity is destroyed
-        triggerDatabaseSync("onDestroy")
+        // Solo hacer sync cuando la Activity se destruye COMPLETAMENTE
+        // (cuando el usuario cierra la app o el sistema la mata)
+        Log.d(TAG, "MainActivity being destroyed - database sync handled by service")
         
         LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver)
+        
+        // El sync se maneja automáticamente en OpenListService.onDestroy()
+        // No necesitamos hacerlo aquí
     }
-
-    /**
-     * Trigger database synchronization through the service
-     */
-    private fun triggerDatabaseSync(reason: String) {
-        try {
-            val serviceInstance = OpenListService.serviceInstance
-            if (serviceInstance != null && OpenListService.isRunning) {
-                Log.d(TAG, "Triggering database sync due to: $reason")
-                serviceInstance.forceImmediateDbSync()
-            } else {
-                Log.d(TAG, "Service not running, skipping database sync for: $reason")
-            }
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to trigger database sync for $reason", e)
-        }
-    }
-
 
     inner class MyReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -137,12 +108,7 @@ class MainActivity : FlutterActivity() {
                         }
                     })
                 }
-
-
-
             }
-
         }
     }
-
 }
