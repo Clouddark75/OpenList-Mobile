@@ -24,7 +24,7 @@ jobs:
       openlist_web_version: ${{ steps.openlist_version.outputs.openlist_web_version }}
       openlist_built_at: ${{ steps.openlist_version.outputs.openlist_built_at }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -81,7 +81,7 @@ jobs:
       release_output: "${{ github.workspace }}/build/app/outputs/apk/release"
       debug_output: "${{ github.workspace }}/build/app/outputs/flutter-apk"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -92,11 +92,11 @@ jobs:
           ./init_openlist.sh
           ./init_web.sh
 
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@v6
         with:
           go-version: 1.25.0
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 17
@@ -124,7 +124,7 @@ jobs:
           OPENLIST_GIT_AUTHOR: The OpenList Projects Contributors <noreply@openlist.team>
 
       - name: Upload AAR
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: "OpenList"
           path: "${{ github.workspace }}/android/app/libs/*.aar"
@@ -256,7 +256,7 @@ jobs:
 
       - name: Upload App To Artifact arm-v7a
         if: success () || failure ()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: "OpenList-Mobile-${{ env.ver_name }}_arm-v7a"
           path: |
@@ -265,7 +265,7 @@ jobs:
 
       - name: Upload App To Artifact x86_64
         if: success () || failure ()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: "OpenList-Mobile-${{ env.ver_name }}_x86_64"
           path: |
