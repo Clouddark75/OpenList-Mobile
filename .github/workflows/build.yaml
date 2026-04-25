@@ -45,7 +45,7 @@ jobs:
           ndk-version: r25c
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2.4.2
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Build OpenList
         run: |
