@@ -1,0 +1,186 @@
+Analyzing OpenList-Mobile...                                    
+
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:23:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:25:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:27:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:29:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:31:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:34:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:37:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:40:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:42:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:44:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:46:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:48:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:50:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:52:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:54:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:56:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:58:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:60:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:62:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:64:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:64:30 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:66:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:68:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:70:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:72:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:74:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:76:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:78:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:78:27 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:81:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:83:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:86:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:88:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:91:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:93:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:95:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:97:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:99:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:99:27 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:101:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:103:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:105:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:107:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:109:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:112:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:115:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:118:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:120:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:122:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_en.dart:125:52 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:23:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:25:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:27:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:29:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:31:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:33:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:35:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:37:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:39:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:41:20 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:43:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:45:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:47:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:49:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:51:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:53:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:55:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:57:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:59:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:61:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:61:30 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:63:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:65:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:67:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:69:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:71:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:73:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:75:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:75:27 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:77:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:79:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:81:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:83:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:85:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:87:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:89:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:91:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:93:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:93:27 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:95:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:97:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:99:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:101:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:103:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:105:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:107:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:109:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:111:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:113:21 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/generated/intl/messages_zh.dart:116:52 • strict_top_level_inference
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:39:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:66:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:88:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:115:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:137:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:164:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:186:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:213:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:235:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:262:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:284:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:311:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:344:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:371:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:398:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:425:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:452:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:479:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:501:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:534:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:556:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:578:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:600:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:627:18 • constant_identifier_names
+   info • The constant name '__pigeon_channelName' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style • lib/generated_api.dart:654:18 • constant_identifier_names
+   info • 'color' is deprecated and shouldn't be used. Use colorFilter instead. Try replacing the use of the deprecated member with the replacement • lib/main.dart:119:23 • deprecated_member_use
+   info • Missing type annotation. Try adding a type annotation • lib/main.dart:159:3 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/app_update_dialog.dart:21:10 • strict_top_level_inference
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/app_update_dialog.dart:31:9 • use_build_context_synchronously
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/pages/app_update_dialog.dart:33:36 • deprecated_member_use
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/download_manager_page.dart:11:9 • use_super_parameters
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/download_manager_page.dart:58:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:603:33 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:609:33 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:639:33 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:646:33 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:669:27 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:675:32 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:681:27 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:687:27 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:693:27 • use_build_context_synchronously
+warning • The left operand can't be null, so the right operand is never executed. Try removing the operator and the right operand • lib/pages/download_manager_page.dart:693:69 • dead_null_aware_expression
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:699:32 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:706:23 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:712:28 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:736:23 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/download_manager_page.dart:740:7 • avoid_print
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:742:23 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:762:25 • use_build_context_synchronously
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/download_manager_page.dart:766:9 • avoid_print
+   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/pages/download_manager_page.dart:768:25 • use_build_context_synchronously
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/openlist/config_editor_page.dart:15:9 • use_super_parameters
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/pages/openlist/config_editor_page.dart:374:42 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/pages/openlist/config_editor_page.dart:429:39 • deprecated_member_use
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/openlist/log_list_view.dart:13:9 • use_super_parameters
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/openlist/openlist.dart:15:9 • use_super_parameters
+warning • The member 'value' can only be used within instance members of subclasses of 'RxList' • lib/pages/openlist/openlist.dart:100:51 • invalid_use_of_protected_member
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/openlist/openlist.dart:143:11 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/openlist/openlist.dart:156:7 • avoid_print
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/settings/settings.dart:14:9 • use_super_parameters
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:238:3 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:243:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:245:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:250:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:254:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:259:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:263:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:268:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:272:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:277:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:281:7 • strict_top_level_inference
+   info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:283:7 • strict_top_level_inference
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/settings/troubleshooting_page.dart:5:9 • use_super_parameters
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/web/web.dart:17:9 • use_super_parameters
+   info • Missing type annotation. Try adding a type annotation • lib/pages/web/web.dart:40:3 • strict_top_level_inference
+   info • 'onPopInvoked' is deprecated and shouldn't be used. Use onPopInvokedWithResult instead. This feature was deprecated after v3.22.0-12.0.pre. Try replacing the use of the deprecated member with the replacement • lib/pages/web/web.dart:67:9 • deprecated_member_use
+   info • Don't invoke 'print' in production code. Try using a logging framework • lib/utils/download_examples.dart:196:7 • avoid_print
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/utils/download_test.dart:8:9 • use_super_parameters
+   info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/utils/language_controller.dart:89:9 • use_super_parameters
+   info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/utils/language_controller.dart:105:17 • deprecated_member_use
+   info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/utils/language_controller.dart:106:17 • deprecated_member_use
+warning • The declaration '_formatBytes' isn't referenced. Try removing the declaration of '_formatBytes' • lib/utils/notification_manager.dart:339:17 • unused_element
+   info • Missing type annotation. Try adding a type annotation • lib/utils/update_checker.dart:19:3 • strict_top_level_inference
+
