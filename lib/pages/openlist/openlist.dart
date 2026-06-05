@@ -12,7 +12,7 @@ import '../../generated/l10n.dart';
 import 'log_list_view.dart';
 
 class OpenListScreen extends StatelessWidget {
-  const OpenListScreen({Key? key}) : super(key: key);
+  const OpenListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class OpenListScreen extends StatelessWidget {
               ),
               IconButton(
                 tooltip: S.of(context).desktopShortcut,
-                onPressed: () async  {
+                onPressed: () async {
                   Android().addShortcut();
                 },
                 icon: const Icon(Icons.add_home),
@@ -72,9 +72,11 @@ class OpenListScreen extends StatelessWidget {
                     PopupMenuItem(
                       value: 2,
                       onTap: () {
-                        showDialog(context: context, builder: ((context){
-                          return const AppAboutDialog();
-                        }));
+                        showDialog(
+                            context: context,
+                            builder: ((context) {
+                              return const AppAboutDialog();
+                            }));
                       },
                       child: Text(S.of(context).about),
                     ),
@@ -137,15 +139,15 @@ class OpenListController extends GetxController {
   @override
   void onInit() {
     // 设置日志接收器，但状态变化只通过ServiceManager处理
-    Event.setup(MyEventReceiver(
-        (isRunning) {
-          // 不在这里更新状态，避免冲突
-          print('Event receiver status: $isRunning');
-        }, 
-        (log) => addLog(log)));
-    
-    Android().getOpenListVersion().then((value) => openlistVersion.value = value);
-    
+    Event.setup(MyEventReceiver((isRunning) {
+      // 不在这里更新状态，避免冲突
+      print('Event receiver status: $isRunning');
+    }, (log) => addLog(log)));
+
+    Android()
+        .getOpenListVersion()
+        .then((value) => openlistVersion.value = value);
+
     // 获取初始状态
     ServiceManager.instance.checkServiceStatus().then((isRunning) {
       isSwitch.value = isRunning;

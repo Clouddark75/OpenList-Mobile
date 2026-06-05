@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 class TroubleshootingPage extends StatelessWidget {
-  const TroubleshootingPage({Key? key}) : super(key: key);
+  const TroubleshootingPage({super.key});
 
   @override
   Widget build(BuildContext context) {

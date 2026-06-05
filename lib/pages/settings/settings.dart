@@ -11,7 +11,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../generated/l10n.dart';
 
 class SettingsScreen extends StatefulWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   State<SettingsScreen> createState() {
@@ -165,7 +165,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onChanged: (value) {
                 controller.silentJumpApp = value;
               }),
-          
+
           BasicPreference(
             title: S.of(context).troubleshooting,
             subtitle: S.of(context).troubleshootingDesc,
@@ -187,7 +187,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String _getLanguageDisplayName() {
     final languageController = Get.find<LanguageController>();
     final currentOption = languageController.currentLanguageOption;
-    
+
     switch (currentOption.name) {
       case 'followSystem':
         return S.of(context).followSystem;
@@ -235,19 +235,19 @@ class _SettingsController extends GetxController {
   final _notificationGranted = true.obs;
   final _storageGranted = true.obs;
 
-  setDataDir(String value) async {
+  Future<void> setDataDir(String value) async {
     NativeBridge.appConfig.setDataDir(value);
     _dataDir.value = await NativeBridge.appConfig.getDataDir();
   }
 
-  get dataDir => _dataDir.value;
+  String get dataDir => _dataDir.value;
 
   set autoUpdate(value) => {
         _autoUpdate.value = value,
         NativeBridge.appConfig.setAutoCheckUpdateEnabled(value)
       };
 
-  get autoUpdate => _autoUpdate.value;
+  bool get autoUpdate => _autoUpdate.value;
 
   final _wakeLock = true.obs;
 
@@ -256,7 +256,7 @@ class _SettingsController extends GetxController {
         NativeBridge.appConfig.setWakeLockEnabled(value)
       };
 
-  get wakeLock => _wakeLock.value;
+  bool get wakeLock => _wakeLock.value;
 
   final _autoStart = true.obs;
 
@@ -265,7 +265,7 @@ class _SettingsController extends GetxController {
         NativeBridge.appConfig.setStartAtBootEnabled(value)
       };
 
-  get startAtBoot => _autoStart.value;
+  bool get startAtBoot => _autoStart.value;
 
   final _autoStartWebPage = false.obs;
 
@@ -274,11 +274,11 @@ class _SettingsController extends GetxController {
         NativeBridge.appConfig.setAutoOpenWebPageEnabled(value)
       };
 
-  get autoStartWebPage => _autoStartWebPage.value;
+  bool get autoStartWebPage => _autoStartWebPage.value;
 
   final _silentJumpApp = false.obs;
 
-  get silentJumpApp => _silentJumpApp.value;
+  bool get silentJumpApp => _silentJumpApp.value;
 
   set silentJumpApp(value) => {
         _silentJumpApp.value = value,

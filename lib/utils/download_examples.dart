@@ -5,7 +5,6 @@ import '../generated/l10n.dart';
 
 /// 下载功能使用示例
 class DownloadExamples {
-  
   /// 示例1: 简单文件下载
   static Future<void> downloadSimpleFile() async {
     await DownloadManager.downloadFileInBackground(
@@ -34,18 +33,19 @@ class DownloadExamples {
   static Future<void> downloadMultipleFiles(List<String> urls) async {
     for (int i = 0; i < urls.length; i++) {
       String url = urls[i];
-      String filename = 'file_${i + 1}_${DateTime.now().millisecondsSinceEpoch}';
-      
+      String filename =
+          'file_${i + 1}_${DateTime.now().millisecondsSinceEpoch}';
+
       Get.showSnackbar(GetSnackBar(
         message: S.current.downloadingFileProgress(i + 1, urls.length),
         duration: Duration(seconds: 2),
       ));
-      
+
       bool success = await DownloadManager.downloadFileInBackground(
         url: url,
         filename: filename,
       );
-      
+
       if (!success) {
         Get.showSnackbar(GetSnackBar(
           message: S.current.fileDownloadFailed(i + 1),
@@ -54,7 +54,7 @@ class DownloadExamples {
         break;
       }
     }
-    
+
     Get.showSnackbar(GetSnackBar(
       message: S.current.batchDownloadComplete,
       duration: Duration(seconds: 3),
@@ -133,7 +133,8 @@ class DownloadExamples {
   }
 
   /// 示例7: 下载APK并提示安装
-  static Future<void> downloadApkAndInstall(String apkUrl, String version) async {
+  static Future<void> downloadApkAndInstall(
+      String apkUrl, String version) async {
     bool success = await DownloadManager.downloadFileWithProgress(
       url: apkUrl,
       filename: 'app_update_v$version.apk',
@@ -169,17 +170,38 @@ class DownloadExamples {
 
 /// 下载工具类 - 提供一些便捷方法
 class DownloadUtils {
-  
   /// 检查URL是否为下载链接
   static bool isDownloadUrl(String url) {
     final downloadExtensions = [
-      '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
-      '.zip', '.rar', '.7z', '.tar', '.gz',
-      '.mp3', '.mp4', '.avi', '.mkv', '.mov',
-      '.jpg', '.jpeg', '.png', '.gif', '.bmp',
-      '.apk', '.exe', '.dmg', '.deb', '.rpm'
+      '.pdf',
+      '.doc',
+      '.docx',
+      '.xls',
+      '.xlsx',
+      '.ppt',
+      '.pptx',
+      '.zip',
+      '.rar',
+      '.7z',
+      '.tar',
+      '.gz',
+      '.mp3',
+      '.mp4',
+      '.avi',
+      '.mkv',
+      '.mov',
+      '.jpg',
+      '.jpeg',
+      '.png',
+      '.gif',
+      '.bmp',
+      '.apk',
+      '.exe',
+      '.dmg',
+      '.deb',
+      '.rpm'
     ];
-    
+
     String lowerUrl = url.toLowerCase();
     return downloadExtensions.any((ext) => lowerUrl.contains(ext));
   }
@@ -202,12 +224,15 @@ class DownloadUtils {
   static String formatFileSize(int bytes) {
     if (bytes < 1024) return '${bytes}B';
     if (bytes < 1024 * 1024) return '${(bytes / 1024).toStringAsFixed(1)}KB';
-    if (bytes < 1024 * 1024 * 1024) return '${(bytes / (1024 * 1024)).toStringAsFixed(1)}MB';
+    if (bytes < 1024 * 1024 * 1024) {
+      return '${(bytes / (1024 * 1024)).toStringAsFixed(1)}MB';
+    }
     return '${(bytes / (1024 * 1024 * 1024)).toStringAsFixed(1)}GB';
   }
 
   /// 显示下载选择对话框
-  static void showDownloadOptions(BuildContext context, String url, {String? filename}) {
+  static void showDownloadOptions(BuildContext context, String url,
+      {String? filename}) {
     showModalBottomSheet(
       context: context,
       builder: (context) => Container(

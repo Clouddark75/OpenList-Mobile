@@ -12,7 +12,7 @@ import '../../utils/service_manager.dart';
 
 /// Config.json Editor with validation, backup, and real-time syntax checking
 class ConfigEditorPage extends StatefulWidget {
-  const ConfigEditorPage({Key? key}) : super(key: key);
+  const ConfigEditorPage({super.key});
 
   @override
   State<ConfigEditorPage> createState() => _ConfigEditorPageState();
@@ -40,10 +40,10 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
   /// Real-time JSON syntax validation with debounce
   void _validateJson() {
     if (_isPreview) return; // Skip validation in preview mode
-    
+
     // Cancel previous timer to implement debounce
     _debounceTimer?.cancel();
-    
+
     // Create new timer with 300ms delay
     _debounceTimer = Timer(const Duration(milliseconds: 300), () {
       final text = _controller.text.trim();
@@ -71,7 +71,8 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
           final match = RegExp(r'line (\d+)').firstMatch(e.message);
           setState(() {
             _jsonErrorMessage = e.message;
-            _jsonErrorLine = match != null ? int.tryParse(match.group(1) ?? '') : null;
+            _jsonErrorLine =
+                match != null ? int.tryParse(match.group(1) ?? '') : null;
           });
         }
       }
@@ -90,7 +91,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
       _filePath = '$dataDir/config.json';
       _backupFilePath = '$dataDir/config.json.backup';
       final file = File(_filePath);
-      
+
       if (await file.exists()) {
         _controller.text = await file.readAsString();
       } else {
@@ -104,9 +105,9 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
     } on FileSystemException catch (e) {
       if (mounted) {
         setState(() {
-          _errorMessage = e.osError?.errorCode == 13 
-            ? S.of(context).filePermissionDenied 
-            : S.of(context).loadFailed(e.message);
+          _errorMessage = e.osError?.errorCode == 13
+              ? S.of(context).filePermissionDenied
+              : S.of(context).loadFailed(e.message);
         });
       }
     } catch (e) {
@@ -184,7 +185,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
 
     if (result == 'save' || result == 'save_restart') {
       final saveSuccess = await _saveConfigFile();
-      
+
       // Restart service if requested and save was successful
       if (saveSuccess && result == 'save_restart') {
         await _restartOpenListService();
@@ -218,7 +219,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
 
       // Restart service via ServiceManager
       final success = await ServiceManager.instance.restartService();
-      
+
       if (mounted) {
         if (success) {
           Get.showSnackbar(GetSnackBar(
@@ -248,7 +249,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
   /// Returns true if save was successful, false otherwise
   Future<bool> _saveConfigFile() async {
     final text = _controller.text.trim();
-    
+
     // Validate JSON format before saving
     try {
       jsonDecode(text);
@@ -257,9 +258,9 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
         final match = RegExp(r'line (\d+)').firstMatch(e.message);
         final line = match != null ? int.tryParse(match.group(1) ?? '') : null;
         Get.showSnackbar(GetSnackBar(
-          message: line != null 
-            ? S.of(context).invalidJsonFormat(line, e.message)
-            : S.of(context).saveFailed(e.message),
+          message: line != null
+              ? S.of(context).invalidJsonFormat(line, e.message)
+              : S.of(context).saveFailed(e.message),
           duration: const Duration(seconds: 3),
           backgroundColor: Colors.red,
         ));
@@ -270,7 +271,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
     File? backupFile;
     try {
       final file = File(_filePath);
-      
+
       // Create backup before saving
       if (await file.exists()) {
         backupFile = File(_backupFilePath);
@@ -279,17 +280,17 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
 
       // Ensure parent directory exists
       await file.parent.create(recursive: true);
-      
+
       // Write new config
       await file.writeAsString(text);
-      
+
       if (mounted) {
         Get.showSnackbar(GetSnackBar(
           message: S.of(context).saved,
           duration: const Duration(seconds: 2),
         ));
       }
-      
+
       return true;
     } on FileSystemException catch (e) {
       // Restore backup on failure
@@ -298,11 +299,11 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
           await backupFile.copy(_filePath);
         } catch (_) {}
       }
-      
+
       if (mounted) {
-        final errorMsg = e.osError?.errorCode == 13 
-          ? S.of(context).filePermissionDenied 
-          : S.of(context).saveFailed(e.message);
+        final errorMsg = e.osError?.errorCode == 13
+            ? S.of(context).filePermissionDenied
+            : S.of(context).saveFailed(e.message);
         Get.showSnackbar(GetSnackBar(
           message: errorMsg,
           duration: const Duration(seconds: 3),
@@ -317,7 +318,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
           await backupFile.copy(_filePath);
         } catch (_) {}
       }
-      
+
       if (mounted) {
         Get.showSnackbar(GetSnackBar(
           message: S.of(context).saveFailed(e.toString()),
@@ -332,7 +333,7 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('config.json'),
@@ -371,28 +372,31 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
                 // Warning message banner
                 if (_errorMessage != null)
                   Container(
-                    color: Colors.orange.withOpacity(0.2),
+                    color: Colors.orange.withValues(alpha: 0.2),
                     padding: const EdgeInsets.all(8),
                     child: Row(
                       children: [
-                        const Icon(Icons.warning, color: Colors.orange, size: 20),
+                        const Icon(Icons.warning,
+                            color: Colors.orange, size: 20),
                         const SizedBox(width: 8),
                         Expanded(
-                          child: Text(_errorMessage!, 
-                            style: const TextStyle(color: Colors.orange, fontSize: 12)),
+                          child: Text(_errorMessage!,
+                              style: const TextStyle(
+                                  color: Colors.orange, fontSize: 12)),
                         ),
                       ],
                     ),
                   ),
-                
+
                 // File path display
                 Container(
                   color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(_filePath, 
-                    style: Theme.of(context).textTheme.bodySmall),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Text(_filePath,
+                      style: Theme.of(context).textTheme.bodySmall),
                 ),
-                
+
                 // Editor or preview
                 Expanded(
                   child: _isPreview
@@ -422,11 +426,11 @@ class _ConfigEditorPageState extends State<ConfigEditorPage> {
                           ),
                         ),
                 ),
-                
+
                 // JSON syntax error display at bottom
                 if (_jsonErrorMessage != null && !_isPreview)
                   Container(
-                    color: Colors.red.withOpacity(0.1),
+                    color: Colors.red.withValues(alpha: 0.1),
                     padding: const EdgeInsets.all(12),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,

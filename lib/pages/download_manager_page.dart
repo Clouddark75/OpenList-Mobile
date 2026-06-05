@@ -8,7 +8,7 @@ import '../generated/l10n.dart';
 
 /// 下载文件管理页面
 class DownloadManagerPage extends StatefulWidget {
-  const DownloadManagerPage({Key? key}) : super(key: key);
+  const DownloadManagerPage({super.key});
 
   @override
   State<DownloadManagerPage> createState() => _DownloadManagerPageState();
@@ -26,7 +26,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
     _loadDownloadedFiles();
-    
+
     // 定期刷新活跃任务状态
     _startPeriodicRefresh();
   }
@@ -66,13 +66,15 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
   String _formatFileSize(int bytes) {
     if (bytes < 1024) return '${bytes}B';
     if (bytes < 1024 * 1024) return '${(bytes / 1024).toStringAsFixed(1)}KB';
-    if (bytes < 1024 * 1024 * 1024) return '${(bytes / (1024 * 1024)).toStringAsFixed(1)}MB';
+    if (bytes < 1024 * 1024 * 1024) {
+      return '${(bytes / (1024 * 1024)).toStringAsFixed(1)}MB';
+    }
     return '${(bytes / (1024 * 1024 * 1024)).toStringAsFixed(1)}GB';
   }
 
   String _formatDateTime(DateTime dateTime) {
     return '${dateTime.year}-${dateTime.month.toString().padLeft(2, '0')}-${dateTime.day.toString().padLeft(2, '0')} '
-           '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
+        '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
   }
 
   IconData _getFileIcon(String filename) {
@@ -126,7 +128,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
 
   Widget _buildActiveTasksTab() {
     List<DownloadTask> activeTasks = DownloadManager.activeTasks;
-    
+
     if (activeTasks.isEmpty) {
       return Center(
         child: Column(
@@ -154,7 +156,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
       itemCount: activeTasks.length,
       itemBuilder: (context, index) {
         DownloadTask task = activeTasks[index];
-        
+
         return Card(
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: Padding(
@@ -218,11 +220,13 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
                     children: [
                       Text(
                         task.progressText,
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Text(
                         '${(task.progress * 100).toStringAsFixed(1)}%',
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -267,7 +271,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
 
   Widget _buildCompletedTasksTab() {
     List<DownloadTask> completedTasks = DownloadManager.completedTasks;
-    
+
     if (_isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -301,103 +305,106 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
         children: [
           // 显示任务记录中的已完成下载
           ...completedTasks.map((task) => Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-            child: ListTile(
-              leading: Icon(
-                _getFileIcon(task.filename),
-                size: 32,
-                color: _getStatusColor(task.status),
-              ),
-              title: Text(
-                task.filename,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    task.statusText,
-                    style: TextStyle(color: _getStatusColor(task.status)),
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                child: ListTile(
+                  leading: Icon(
+                    _getFileIcon(task.filename),
+                    size: 32,
+                    color: _getStatusColor(task.status),
                   ),
-                  if (task.endTime != null)
-                    Text('${S.of(context).completedTime}: ${_formatDateTime(task.endTime!)}'),
-                  if (task.totalBytes > 0)
-                    Text('${S.of(context).size}: ${_formatFileSize(task.totalBytes)}'),
-                ],
-              ),
-              trailing: PopupMenuButton<String>(
-                onSelected: (value) {
-                  switch (value) {
-                    case 'open':
-                      if (task.status == DownloadStatus.completed) {
-                        _openFile(task.filePath);
-                      }
-                      break;
-                    case 'open_folder':
-                      if (task.status == DownloadStatus.completed) {
-                        _openFileManager(task.filePath);
-                      }
-                      break;
-                    case 'delete_record':
-                      _confirmDeleteTaskRecord(task);
-                      break;
-                    case 'delete_file':
-                      if (task.status == DownloadStatus.completed) {
-                        _confirmDeleteFile(task.filename);
-                      }
-                      break;
-                  }
-                },
-                itemBuilder: (context) => [
-                  if (task.status == DownloadStatus.completed)
-                    PopupMenuItem(
-                      value: 'open',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.open_in_new),
-                          const SizedBox(width: 8),
-                          Text(S.of(context).openFile),
-                        ],
-                      ),
-                    ),
-                  if (task.status == DownloadStatus.completed)
-                    PopupMenuItem(
-                      value: 'open_folder',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.folder_open),
-                          const SizedBox(width: 8),
-                          Text(S.of(context).showInFileManager),
-                        ],
-                      ),
-                    ),
-                  PopupMenuItem(
-                    value: 'delete_record',
-                    child: Row(
-                      children: [
-                        const Icon(Icons.delete_outline),
-                        const SizedBox(width: 8),
-                        Text(S.of(context).deleteRecord),
-                      ],
-                    ),
+                  title: Text(
+                    task.filename,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  if (task.status == DownloadStatus.completed)
-                    PopupMenuItem(
-                      value: 'delete_file',
-                      child: Row(
-                        children: [
-                          const Icon(Icons.delete, color: Colors.red),
-                          const SizedBox(width: 8),
-                          Text(S.of(context).deleteFile, style: const TextStyle(color: Colors.red)),
-                        ],
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        task.statusText,
+                        style: TextStyle(color: _getStatusColor(task.status)),
                       ),
-                    ),
-                ],
-              ),
-            ),
-          )),
-          
+                      if (task.endTime != null)
+                        Text(
+                            '${S.of(context).completedTime}: ${_formatDateTime(task.endTime!)}'),
+                      if (task.totalBytes > 0)
+                        Text(
+                            '${S.of(context).size}: ${_formatFileSize(task.totalBytes)}'),
+                    ],
+                  ),
+                  trailing: PopupMenuButton<String>(
+                    onSelected: (value) {
+                      switch (value) {
+                        case 'open':
+                          if (task.status == DownloadStatus.completed) {
+                            _openFile(task.filePath);
+                          }
+                          break;
+                        case 'open_folder':
+                          if (task.status == DownloadStatus.completed) {
+                            _openFileManager(task.filePath);
+                          }
+                          break;
+                        case 'delete_record':
+                          _confirmDeleteTaskRecord(task);
+                          break;
+                        case 'delete_file':
+                          if (task.status == DownloadStatus.completed) {
+                            _confirmDeleteFile(task.filename);
+                          }
+                          break;
+                      }
+                    },
+                    itemBuilder: (context) => [
+                      if (task.status == DownloadStatus.completed)
+                        PopupMenuItem(
+                          value: 'open',
+                          child: Row(
+                            children: [
+                              const Icon(Icons.open_in_new),
+                              const SizedBox(width: 8),
+                              Text(S.of(context).openFile),
+                            ],
+                          ),
+                        ),
+                      if (task.status == DownloadStatus.completed)
+                        PopupMenuItem(
+                          value: 'open_folder',
+                          child: Row(
+                            children: [
+                              const Icon(Icons.folder_open),
+                              const SizedBox(width: 8),
+                              Text(S.of(context).showInFileManager),
+                            ],
+                          ),
+                        ),
+                      PopupMenuItem(
+                        value: 'delete_record',
+                        child: Row(
+                          children: [
+                            const Icon(Icons.delete_outline),
+                            const SizedBox(width: 8),
+                            Text(S.of(context).deleteRecord),
+                          ],
+                        ),
+                      ),
+                      if (task.status == DownloadStatus.completed)
+                        PopupMenuItem(
+                          value: 'delete_file',
+                          child: Row(
+                            children: [
+                              const Icon(Icons.delete, color: Colors.red),
+                              const SizedBox(width: 8),
+                              Text(S.of(context).deleteFile,
+                                  style: const TextStyle(color: Colors.red)),
+                            ],
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              )),
+
           // 显示文件系统中的其他下载文件
           ..._downloadedFiles.where((file) {
             String filename = file.path.split('/').last;
@@ -406,7 +413,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
           }).map((file) {
             String filename = file.path.split('/').last;
             FileStat stat = file.statSync();
-            
+
             return Card(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: ListTile(
@@ -423,8 +430,10 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('${S.of(context).size}: ${_formatFileSize(stat.size)}'),
-                    Text('${S.of(context).modifiedTime}: ${_formatDateTime(stat.modified)}'),
+                    Text(
+                        '${S.of(context).size}: ${_formatFileSize(stat.size)}'),
+                    Text(
+                        '${S.of(context).modifiedTime}: ${_formatDateTime(stat.modified)}'),
                   ],
                 ),
                 trailing: const Icon(Icons.more_vert),
@@ -454,7 +463,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
               DownloadManager.cancelDownload(task.id);
               setState(() {});
             },
-            child: Text(S.of(context).cancelDownload, style: const TextStyle(color: Colors.red)),
+            child: Text(S.of(context).cancelDownload,
+                style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -478,7 +488,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
               DownloadManager.removeTask(task.id);
               setState(() {});
             },
-            child: Text(S.of(context).delete, style: const TextStyle(color: Colors.red)),
+            child: Text(S.of(context).delete,
+                style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -487,7 +498,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
 
   void _showFileOptions(FileSystemEntity file) {
     String filename = file.path.split('/').last;
-    
+
     showModalBottomSheet(
       context: context,
       builder: (context) => Container(
@@ -540,7 +551,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
             ),
             ListTile(
               leading: const Icon(Icons.delete, color: Colors.red),
-              title: Text(S.of(context).deleteFile, style: const TextStyle(color: Colors.red)),
+              title: Text(S.of(context).deleteFile,
+                  style: const TextStyle(color: Colors.red)),
               onTap: () {
                 Navigator.pop(context);
                 _confirmDeleteFile(filename);
@@ -555,7 +567,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
   void _showFileInfo(FileSystemEntity file) {
     String filename = file.path.split('/').last;
     FileStat stat = file.statSync();
-    
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -568,7 +580,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
             const SizedBox(height: 8),
             Text('${S.of(context).size}: ${_formatFileSize(stat.size)}'),
             const SizedBox(height: 8),
-            Text('${S.of(context).modifiedTime}: ${_formatDateTime(stat.modified)}'),
+            Text(
+                '${S.of(context).modifiedTime}: ${_formatDateTime(stat.modified)}'),
             const SizedBox(height: 8),
             Text('${S.of(context).filePath}: ${file.path}'),
           ],
@@ -611,7 +624,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
                 ));
               }
             },
-            child: Text(S.of(context).delete, style: const TextStyle(color: Colors.red)),
+            child: Text(S.of(context).delete,
+                style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -648,7 +662,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
                 ));
               }
             },
-            child: Text(S.of(context).clear, style: const TextStyle(color: Colors.red)),
+            child: Text(S.of(context).clear,
+                style: const TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -659,7 +674,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
   Future<void> _openFile(String filePath) async {
     try {
       final result = await OpenFilex.open(filePath);
-      
+
       switch (result.type) {
         case ResultType.done:
           // 文件成功打开，不需要额外提示
@@ -720,7 +735,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
     try {
       // 获取文件所在目录
       String directoryPath = filePath.substring(0, filePath.lastIndexOf('/'));
-      
+
       // 尝试打开文件管理器并定位到文件
       await openFileManager(
         androidConfig: AndroidConfig(
@@ -731,7 +746,7 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
           folderPath: directoryPath,
         ),
       );
-      
+
       Get.showSnackbar(GetSnackBar(
         message: S.of(context).fileManagerOpened,
         duration: const Duration(seconds: 2),
@@ -826,11 +841,13 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
           tabs: [
             Tab(
               icon: const Icon(Icons.downloading),
-              text: '${S.of(context).inProgress} (${DownloadManager.activeTasks.length})',
+              text:
+                  '${S.of(context).inProgress} (${DownloadManager.activeTasks.length})',
             ),
             Tab(
               icon: const Icon(Icons.download_done),
-              text: '${S.of(context).completed} (${DownloadManager.completedTasks.length + _downloadedFiles.length})',
+              text:
+                  '${S.of(context).completed} (${DownloadManager.completedTasks.length + _downloadedFiles.length})',
             ),
           ],
         ),
@@ -888,7 +905,8 @@ class _DownloadManagerPageState extends State<DownloadManagerPage>
                   children: [
                     const Icon(Icons.delete_forever, color: Colors.red),
                     const SizedBox(width: 8),
-                    Text(S.of(context).clearAll, style: const TextStyle(color: Colors.red)),
+                    Text(S.of(context).clearAll,
+                        style: const TextStyle(color: Colors.red)),
                   ],
                 ),
               ),

@@ -20,16 +20,16 @@ import 'contant/native_bridge.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // 初始化语言控制器
   Get.put(LanguageController());
-  
+
   // 初始化通知管理器
   await NotificationManager.initialize();
-  
+
   // 初始化服务管理器
   await ServiceManager.instance.initialize();
-  
+
   // Android
   if (!kIsWeb &&
       kDebugMode &&
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         // 如果语言控制器设置为跟随系统，则使用null让系统自动选择
         // 否则使用指定的locale
         Locale? appLocale = languageController.locale;
-        
+
         return GetMaterialApp(
           title: 'OpenList',
           themeMode: ThemeMode.system,
@@ -156,7 +156,7 @@ class MyHomePage extends StatelessWidget {
 class _MainController extends GetxController {
   final selectedIndex = 1.obs;
 
-  setPageIndex(int index) {
+  void setPageIndex(int index) {
     selectedIndex.value = index;
   }
 

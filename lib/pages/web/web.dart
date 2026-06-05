@@ -14,7 +14,7 @@ import '../../generated/l10n.dart';
 GlobalKey<WebScreenState> webGlobalKey = GlobalKey();
 
 class WebScreen extends StatefulWidget {
-  const WebScreen({Key? key}) : super(key: key);
+  const WebScreen({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -37,7 +37,7 @@ class WebScreenState extends State<WebScreen> {
   String _url = "http://localhost:5244";
   bool _canGoBack = false;
 
-  onClickNavigationBar() {
+  void onClickNavigationBar() {
     log("onClickNavigationBar");
     _webViewController?.reload();
   }

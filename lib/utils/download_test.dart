@@ -5,7 +5,7 @@ import '../generated/l10n.dart';
 
 /// 下载功能测试页面
 class DownloadTestPage extends StatelessWidget {
-  const DownloadTestPage({Key? key}) : super(key: key);
+  const DownloadTestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,8 @@ class DownloadTestPage extends StatelessWidget {
                 Get.dialog(
                   AlertDialog(
                     title: Text(S.current.downloadDirectory),
-                    content: SelectableText(path ?? S.current.getDownloadPathFailed),
+                    content:
+                        SelectableText(path ?? S.current.getDownloadPathFailed),
                     actions: [
                       TextButton(
                         onPressed: () => Get.back(),

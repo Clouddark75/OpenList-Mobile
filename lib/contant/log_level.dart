@@ -12,7 +12,7 @@ class LogLevel {
 
   static Color toColor(int level) {
     //Color.fromARGB(a, r, g, b)
-    return switch(level) {
+    return switch (level) {
       LogLevel.panic => const Color.fromARGB(255, 255, 0, 0),
       LogLevel.fatal => const Color.fromARGB(255, 255, 0, 0),
       LogLevel.error => const Color.fromARGB(255, 255, 0, 0),
@@ -25,7 +25,7 @@ class LogLevel {
   }
 
   static String toStr(int level) {
-    return switch(level) {
+    return switch (level) {
       LogLevel.panic => "Panic",
       LogLevel.fatal => "Fatal",
       LogLevel.error => "Error",

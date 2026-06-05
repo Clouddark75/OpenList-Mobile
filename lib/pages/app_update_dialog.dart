@@ -18,19 +18,20 @@ class AppUpdateDialog extends StatelessWidget {
       required this.version,
       required this.htmlUrl});
 
-  static checkUpdateAndShowDialog(
+  static Future<void> checkUpdateAndShowDialog(
       BuildContext context, ValueChanged<bool>? checkFinished) async {
-    final checker = UpdateChecker(owner: "openlistteam", repo: "OpenList-Mobile");
+    final checker =
+        UpdateChecker(owner: "openlistteam", repo: "OpenList-Mobile");
     await checker.downloadData();
     final hasNewVersion = await checker.hasNewVersion();
-    
+
     checkFinished?.call(hasNewVersion);
-    
+
     if (hasNewVersion) {
       showDialog(
         context: context,
         barrierDismissible: false,
-        barrierColor: Colors.black.withOpacity(0.5),
+        barrierColor: Colors.black.withValues(alpha: 0.5),
         builder: (context) {
           return AppUpdateDialog(
             content: checker.getUpdateContent(),
@@ -46,7 +47,7 @@ class AppUpdateDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return AlertDialog(
       title: Row(
         children: [
@@ -81,7 +82,6 @@ class AppUpdateDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            
             Card(
               margin: EdgeInsets.zero,
               child: Padding(
@@ -93,7 +93,6 @@ class AppUpdateDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            
             Text(
               S.of(context).selectDownloadMethod,
               style: theme.textTheme.titleSmall?.copyWith(
@@ -101,7 +100,6 @@ class AppUpdateDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            
             Card(
               margin: EdgeInsets.zero,
               child: ListTile(
@@ -122,7 +120,6 @@ class AppUpdateDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            
             Card(
               margin: EdgeInsets.zero,
               child: ListTile(
@@ -141,7 +138,6 @@ class AppUpdateDialog extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-
             Card(
               margin: EdgeInsets.zero,
               child: ListTile(

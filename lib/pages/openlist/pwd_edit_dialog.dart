@@ -40,7 +40,9 @@ class _PwdEditDialogState extends State<PwdEditDialog>
       ),
       actions: [
         TextButton(
-          onPressed: () {Get.back();},
+          onPressed: () {
+            Get.back();
+          },
           child: Text(S.of(context).cancel),
         ),
         FilledButton(

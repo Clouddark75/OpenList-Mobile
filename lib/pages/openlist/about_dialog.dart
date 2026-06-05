@@ -45,7 +45,7 @@ class _AppAboutDialogState extends State<AppAboutDialog> {
         "https://github.com/OpenListTeam/OpenList/releases/tag/$_openlistVersion";
     final appUrl =
         "https://github.com/OpenListTeam/OpenList-Mobile/releases/tag/$_version";
-    
+
     return Dialog(
       child: SingleChildScrollView(
         child: Padding(
@@ -92,12 +92,13 @@ class _AppAboutDialogState extends State<AppAboutDialog> {
                     color: theme.colorScheme.primary,
                   ),
                   title: Text(S.of(context).openlist),
-                  subtitle: Text(_openlistVersion.isNotEmpty 
+                  subtitle: Text(_openlistVersion.isNotEmpty
                       ? _openlistVersion
                       : S.of(context).about),
                   trailing: const Icon(Icons.open_in_new, size: 20),
                   onTap: () {
-                    IntentUtils.getUrlIntent(openlistUrl).launchChooser(S.of(context).openlist);
+                    IntentUtils.getUrlIntent(openlistUrl)
+                        .launchChooser(S.of(context).openlist);
                   },
                   onLongPress: () {
                     Clipboard.setData(ClipboardData(text: openlistUrl));
@@ -120,7 +121,8 @@ class _AppAboutDialogState extends State<AppAboutDialog> {
                   subtitle: Text(_version),
                   trailing: const Icon(Icons.open_in_new, size: 20),
                   onTap: () {
-                    IntentUtils.getUrlIntent(appUrl).launchChooser(S.of(context).openlistMobile);
+                    IntentUtils.getUrlIntent(appUrl)
+                        .launchChooser(S.of(context).openlistMobile);
                   },
                   onLongPress: () {
                     Clipboard.setData(ClipboardData(text: appUrl));

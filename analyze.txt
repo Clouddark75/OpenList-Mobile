@@ -160,6 +160,7 @@ warning • The member 'value' can only be used within instance members of subcl
    info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/openlist/openlist.dart:143:11 • avoid_print
    info • Don't invoke 'print' in production code. Try using a logging framework • lib/pages/openlist/openlist.dart:156:7 • avoid_print
    info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/pages/settings/settings.dart:14:9 • use_super_parameters
+  error • The getter 'platform' isn't defined for the type 'FilePicker'. Try importing the library that defines 'platform', correcting the name to the name of an existing getter, or defining a getter or field named 'platform' • lib/pages/settings/settings.dart:141:45 • undefined_getter
    info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:238:3 • strict_top_level_inference
    info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:243:7 • strict_top_level_inference
    info • Missing type annotation. Try adding a type annotation • lib/pages/settings/settings.dart:245:7 • strict_top_level_inference
@@ -181,6 +182,22 @@ warning • The member 'value' can only be used within instance members of subcl
    info • Parameter 'key' could be a super parameter. Trying converting 'key' to a super parameter • lib/utils/language_controller.dart:89:9 • use_super_parameters
    info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/utils/language_controller.dart:105:17 • deprecated_member_use
    info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/utils/language_controller.dart:106:17 • deprecated_member_use
+  error • The named parameter 'settings' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:37:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 1 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:38:9 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:87:30 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 1 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:87:37 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:155:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 4 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:156:9 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:185:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 1 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:185:35 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:240:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 4 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:241:9 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:270:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 1 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:270:35 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:307:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 4 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:308:9 • extra_positional_arguments_could_be_named
+  error • The named parameter 'id' is required, but there's no corresponding argument. Try adding the required argument • lib/utils/notification_manager.dart:323:28 • missing_required_argument
+  error • Too many positional arguments: 0 expected, but 1 found. Try removing the extra positional arguments, or specifying the name for named arguments • lib/utils/notification_manager.dart:323:35 • extra_positional_arguments_could_be_named
 warning • The declaration '_formatBytes' isn't referenced. Try removing the declaration of '_formatBytes' • lib/utils/notification_manager.dart:339:17 • unused_element
    info • Missing type annotation. Try adding a type annotation • lib/utils/update_checker.dart:19:3 • strict_top_level_inference
 

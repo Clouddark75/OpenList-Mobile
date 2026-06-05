@@ -16,7 +16,7 @@ class UpdateChecker {
   String _versionName = "";
   String _systemABI = "";
 
-  downloadData() async {
+  Future<void> downloadData() async {
     _data = await _getLatestRelease(owner, repo);
     _versionName = await NativeBridge.common.getVersionName();
     _systemABI = await NativeBridge.common.getDeviceCPUABI();
